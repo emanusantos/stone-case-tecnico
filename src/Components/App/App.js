@@ -1,9 +1,13 @@
+import React from 'react';
 import './App.css';
+import LoginScreen from '../../Components/LoginScreen/LoginScreen.jsx'
 
 function App() {
   return (
     <div className="App">
-      <h1>App</h1>
+      <div className="loginWrapper">
+        <LoginScreen />
+      </div>
     </div>
   );
 }
