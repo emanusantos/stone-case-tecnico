@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import './LoginScreen.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { useAuth } from '../../Contexts/AuthContext';
@@ -7,7 +7,25 @@ export default function LoginScreen() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const signup = useAuth()
+    const { signup } = useAuth()
+    const [error, setError] = useState('')
+
+    async function handleSubmit(e) {
+        e.preventDefault()
+
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError('As senhas não coincidem.')
+        };
+
+        try {
+            setError('')
+            await signup(emailRef.current.value, passwordRef.current.value)
+        } catch {
+            setError('Não foi possível criar conta.')
+        }
+
+        signup(emailRef.current.value, passwordRef.current.value)
+    }
 
     return(
         <div className="loginBox">

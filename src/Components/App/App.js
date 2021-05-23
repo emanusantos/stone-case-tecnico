@@ -1,14 +1,17 @@
 import React from 'react';
 import './App.css';
 import LoginScreen from '../../Components/LoginScreen/LoginScreen.jsx'
+import { AuthProvider } from '../../Contexts/AuthContext';
 
 function App() {
   return (
-    <div className="App">
-      <div className="loginWrapper">
-        <LoginScreen />
+    <AuthProvider>
+      <div className="App">
+        <div className="loginWrapper">
+          <LoginScreen />
+        </div>
       </div>
-    </div>
+    </AuthProvider>
   );
 }
 
