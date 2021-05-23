@@ -37,9 +37,26 @@
     flex-direction: column;
 }
 
-input[type=text] {
-    padding: .4em;
-    margin-bottom: .5em;
+.label-input {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: #ECF0F1;
+    margin-top: 1em;
+    border-radius: .5em;
+}
+
+.iconModify {
+    color: #777;
+    margin-left: .3em;
+    padding: 0 .15em;
+}
+
+input {
+    background-color: #ECF0F1;
+    border: none;
+    padding: .7em;
+    border-radius: .5em;
 }
 
 .btn {

@@ -1,5 +1,6 @@
 import React from 'react';
 import './LoginScreen.css';
+import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 
 export default function LoginScreen() {
     return(
@@ -15,11 +16,20 @@ export default function LoginScreen() {
             <div className="signUp">
                     <div className="signUpContent">
                         <h2>Criar conta</h2>
-                        <p>Preencha os caracteres abaixo</p>
+                        <p>Preencha os campos abaixo:</p>
                         <form className="form" action="">
-                            <input type="text" />
-                            <input type="text" />
-                            <input type="text" />
+                            <label className="label-input" htmlFor="">
+                                <FaUser className="iconModify" />
+                                <input type="text" placeholder="Usuário" />
+                            </label>
+                            <label className="label-input" htmlFor="">
+                                <FaEnvelope className="iconModify" /> 
+                                <input type="email" placeholder="E-mail" />
+                            </label>
+                            <label className="label-input" htmlFor="">
+                                <FaLock className="iconModify" />
+                                <input type="password" placeholder="Senha" />
+                            </label>
                         </form>
                         <button className="btn">Registrar-se</button>
                     </div>
