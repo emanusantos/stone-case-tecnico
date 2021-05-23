@@ -19,16 +19,16 @@ export default function LoginScreen() {
                         <p>Preencha os campos abaixo:</p>
                         <form className="form" action="">
                             <label className="label-input" htmlFor="">
-                                <FaUser className="iconModify" />
-                                <input type="text" placeholder="Usuário" />
-                            </label>
-                            <label className="label-input" htmlFor="">
                                 <FaEnvelope className="iconModify" /> 
                                 <input type="email" placeholder="E-mail" />
                             </label>
                             <label className="label-input" htmlFor="">
                                 <FaLock className="iconModify" />
                                 <input type="password" placeholder="Senha" />
+                            </label>
+                            <label className="label-input" htmlFor="">
+                                <FaLock className="iconModify" />
+                                <input type="password" placeholder="Confirme sua senha" />
                             </label>
                         </form>
                         <button className="btn">Registrar-se</button>
