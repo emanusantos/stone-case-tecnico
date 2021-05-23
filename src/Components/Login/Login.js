@@ -2,14 +2,15 @@ import React, { useRef, useState } from 'react';
 import '.././SignUp/SignUp.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { useAuth } from '../../Contexts/AuthContext';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 export default function LoginScreen() {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { signup } = useAuth()
+    const { login } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -17,9 +18,10 @@ export default function LoginScreen() {
         try {
             setError("")
             setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
+            await login(emailRef.current.value, passwordRef.current.value)
+            history.push("/")
         } catch {
-            setError('Não foi possível criar conta.')
+            setError('Não foi possível entrar.')
         }
         setLoading(false)
     }
