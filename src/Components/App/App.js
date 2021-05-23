@@ -1,8 +1,10 @@
 import React from 'react';
 import './App.css';
-import LoginScreen from '../../Components/LoginScreen/LoginScreen.jsx'
+import SignUp from '../SignUp/SignUp.jsx'
 import { AuthProvider } from '../../Contexts/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Dashboard from '../Dashboard/Dashboard';
+import Login from '../Login/Login';
 
 function App() {
   return (
@@ -11,8 +13,10 @@ function App() {
         <Switch>
           <div className="App">
               <div className="loginWrapper">
-                <Route path="/signup" component={LoginScreen} />
+                <Route path="/signup" component={SignUp} />
               </div>
+                <Route exact path="/" component={Dashboard} />
+                <Route path="/login" component={Login} />
           </div>
         </Switch>
       </AuthProvider>

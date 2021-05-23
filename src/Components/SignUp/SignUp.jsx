@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import './LoginScreen.css';
+import './SignUp.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { useAuth } from '../../Contexts/AuthContext';
 
