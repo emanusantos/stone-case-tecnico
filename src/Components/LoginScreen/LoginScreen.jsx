@@ -8,7 +8,8 @@ export default function LoginScreen() {
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     const { signup } = useAuth()
-    const [error, setError] = useState('')
+    const [error, setError] = useState("")
+    const [loading, setLoading] = useState(false)
 
     async function handleSubmit(e) {
         e.preventDefault()
@@ -18,13 +19,13 @@ export default function LoginScreen() {
         };
 
         try {
-            setError('')
+            setError("")
+            setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value)
         } catch {
             setError('Não foi possível criar conta.')
         }
-
-        signup(emailRef.current.value, passwordRef.current.value)
+        setLoading(false)
     }
 
     return(
@@ -40,8 +41,9 @@ export default function LoginScreen() {
             <div className="signUp">
                     <div className="signUpContent">
                         <h2>Criar conta</h2>
+                        <p className="error">{error}</p>
                         <p>Preencha os campos abaixo:</p>
-                        <form className="form" action="">
+                        <form className="form" onSubmit={handleSubmit}>
                             <label className="label-input" htmlFor="">
                                 <FaEnvelope className="iconModify" /> 
                                 <input type="email" placeholder="E-mail" ref={emailRef} />
@@ -54,8 +56,8 @@ export default function LoginScreen() {
                                 <FaLock className="iconModify" />
                                 <input type="password" placeholder="Confirme sua senha" ref={passwordConfirmRef} />
                             </label>
+                            <button disabled={loading} className="btn">Registrar-se</button>
                         </form>
-                        <button className="btn">Registrar-se</button>
                     </div>
             </div>
         </div>
