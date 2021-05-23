@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import './SignUp.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 import { useAuth } from '../../Contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 export default function LoginScreen() {
     const emailRef = useRef()
@@ -32,10 +33,9 @@ export default function LoginScreen() {
         <div className="loginBox">
             <div className="signIn">
                 <div className="signInContent">
-                    <h2>Bem-vindo de volta!</h2>
-                    <p>Para continuar conectado conosco,</p>
-                    <p>por favor faça login em sua conta.</p>
-                    <button className="btn">Login</button>
+                    <h2>Bem-vindo!</h2>
+                    <p>Se você já tem conta, entre agora mesmo!</p>
+                    <Link to="/login"><button className="btn">Entrar</button></Link>
                 </div>
             </div>
             <div className="signUp">
