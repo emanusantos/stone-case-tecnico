@@ -8,7 +8,7 @@ export default function Dashboard() {
     return (
         <div>
             <Navbar />
-            <h1>Bem-vindo, {currentUser.email}!</h1>
+            <h2>Bem-vindo, {currentUser.email}!</h2>
         </div>
     )
 }

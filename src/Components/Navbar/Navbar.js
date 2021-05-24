@@ -23,8 +23,8 @@ export default function Navbar() {
             <h2>StoneTest</h2>
             <ul>
                 <li>Página inicial</li>
-                <li>Comics</li>
-                <li>Characters</li>
+                <li><Link className="textLink" to="/comics">Comics</Link></li>
+                <li><Link className="textLink" to="/characters">Characters</Link></li>
                 <li>Favoritos</li>
                 <div className="dropdownProfile">
                     <li class="drop">Meu perfil</li>
