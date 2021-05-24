@@ -10,7 +10,13 @@ export default function Navbar() {
                 <li>Comics</li>
                 <li>Characters</li>
                 <li>Favoritos</li>
-                <li>Meu perfil</li>
+                <div className="dropdownProfile">
+                    <li class="drop">Meu perfil</li>
+                    <div className="dropContent">
+                        <a href="">Ver perfil</a>
+                        <a href="">Deslogar</a>
+                    </div>
+                </div>
             </ul>
         </nav>
     )

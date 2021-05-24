@@ -5,7 +5,37 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: .2em;
+    overflow: hidden;
 }
+
+.dropdownProfile {
+    overflow: hidden;
+}
+
+.dropContent {
+    display: none;
+    position: absolute;
+    background-color: rgb(73, 79, 82);;
+    z-index: 1;
+    padding: .5em;
+}
+
+.dropContent a {
+    float: none;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: .2em;
+}
+
+.dropContent a:hover {
+    background-color: #777;
+}
+
+.dropdownProfile:hover .dropContent {
+    display: block;
+}
+
 
 nav > h2 {
     margin-left: 1em;
