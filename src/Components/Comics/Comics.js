@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
+import './Comics.css';
 
 export default function Comics() {
 
@@ -20,13 +21,16 @@ export default function Comics() {
     return (
         <div>
             <Navbar />
-            {comics.map(item => (
-                <div>
-                    <img key="img" src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt=""/>
-                    <h1 key="title">{item.title}</h1>
-                    <p key="description">{item.description}</p>
-                </div>
-            ))}
+            <ul className="gridContainer">
+                {comics.map(item => (
+                    <li className="gridItem">
+                            <div className="imgContainer">
+                                <img key="img" src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt=""/>
+                            </div>
+                            <h4 key="title">{item.title}</h4>
+                    </li>
+                ))}
+            </ul>
         </div>
 
     )}
