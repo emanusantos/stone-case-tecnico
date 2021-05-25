@@ -3,10 +3,6 @@ import Navbar from '../Navbar/Navbar';
 
 export default function Comics() {
 
-    const publickey = 'ebdeb55d53ecc6709426269c1331c663'
-    const timestamp = '1621881645'
-    const md5 = 'ef7a9359ab0278556690718d66cf527c'
-
         useEffect(() => {
             fetchItems();
         }, []);
@@ -26,7 +22,7 @@ export default function Comics() {
             <Navbar />
             {comics.map(item => (
                 <div>
-                    <img key="img" src={`${item.images.path}.${item.images.extension}`} alt=""/>
+                    <img key="img" src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt=""/>
                     <h1 key="title">{item.title}</h1>
                     <p key="description">{item.description}</p>
                 </div>
