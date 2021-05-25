@@ -7,6 +7,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import Login from '../Login/Login';
 import PrivateRoute from '../PrivateRoute';
 import Comics from '../Comics/Comics';
+import Characters from '../Characters';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               </div>
                 <PrivateRoute exact path="/" component={Dashboard} />
                 <PrivateRoute exact path="/comics" component={Comics} />
+                <PrivateRoute exact path="/characters" component={Characters} />
           </div>
         </Switch>
       </AuthProvider>

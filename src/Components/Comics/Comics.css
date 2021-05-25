@@ -1,3 +1,8 @@
+.backgroundMarvel {
+    background: url('https://i.pinimg.com/originals/7f/41/57/7f4157f55f0d74d5f7073aa9ed83a0ab.png');
+    background-repeat: repeat;
+}
+
 .gridContainer {
     margin-top: 1em;
     margin-left: 2.5em;
@@ -11,6 +16,8 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    background-color: #fff;
+    border: .1em solid #777;
 }
 
 .imgContainer {
