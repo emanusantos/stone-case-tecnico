@@ -20,7 +20,7 @@ nav {
 .dropContent {
     display: none;
     position: absolute;
-    background-color: rgb(73, 79, 82);;
+    background-color: #02010A;
     z-index: 1;
     padding: .5em;
 }
