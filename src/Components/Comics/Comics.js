@@ -19,7 +19,7 @@ export default function Comics() {
         setComics(items.data.results);
     }
     return (
-        <div className="backgroundMarvel">
+        <div>
             <Navbar />
             <ul className="gridContainer">
                 {comics.map(item => (

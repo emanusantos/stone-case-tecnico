@@ -3,7 +3,7 @@ import './App.css';
 import SignUp from '../SignUp/SignUp.jsx'
 import { AuthProvider } from '../../Contexts/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import Dashboard from '../Dashboard/Dashboard';
+import Profile from '../Profile/Profile';
 import Login from '../Login/Login';
 import PrivateRoute from '../PrivateRoute';
 import Comics from '../Comics/Comics';
@@ -19,7 +19,7 @@ function App() {
                 <Route path="/signup" component={SignUp} />
                 <Route path="/login" component={Login} />
               </div>
-                <PrivateRoute exact path="/" component={Dashboard} />
+                <PrivateRoute exact path="/profile" component={Profile} />
                 <PrivateRoute exact path="/comics" component={Comics} />
                 <PrivateRoute exact path="/characters" component={Characters} />
           </div>

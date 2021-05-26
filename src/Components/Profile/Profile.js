@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from '../Navbar/Navbar';
 import { useAuth } from '../../Contexts/AuthContext';
-import './Dashboard.css';
+import './Profile.css';
 
 export default function Dashboard() {
     const { currentUser } = useAuth()

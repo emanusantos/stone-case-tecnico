@@ -20,9 +20,8 @@ export default function Navbar() {
 
     return (
         <nav>
-            <h2>StoneTest</h2>
+            <h2>S t o n e - T e s t e</h2>
             <ul>
-                <li>Página inicial</li>
                 <li><Link className="textLink" to="/comics">Comics</Link></li>
                 <li><Link className="textLink" to="/characters">Characters</Link></li>
                 <li>Favoritos</li>
@@ -30,7 +29,7 @@ export default function Navbar() {
                     <li class="drop">Meu perfil</li>
                     <div className="dropContent">
                         <Link to="/profile">Ver perfil</Link>
-                        <a href="" onClick={handleLogout}>Deslogar</a>
+                        <Link onClick={handleLogout}>Deslogar</Link>
                     </div>
                 </div>
             </ul>

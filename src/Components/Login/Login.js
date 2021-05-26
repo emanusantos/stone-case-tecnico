@@ -19,7 +19,7 @@ export default function LoginScreen() {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/profile")
         } catch {
             setError('Não foi possível entrar.')
         }
