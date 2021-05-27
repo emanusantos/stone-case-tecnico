@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Comics.css';
+import Input from '../Input/Input';
 
 export default function Comics() {
 
@@ -9,6 +10,7 @@ export default function Comics() {
         }, []);
 
     const [comics, setComics] = useState([]);
+    const [searchTerm, setSearchTerm] = useState('');
 
     const fetchItems = async () => {
         const data = await fetch(
@@ -21,8 +23,15 @@ export default function Comics() {
     return (
         <div>
             <Navbar />
+            <Input placeholder="Pesquise pelo título da comic" onChange={event => {setSearchTerm(event.target.value)}} />
             <ul className="gridContainer">
-                {comics.map(item => (
+                {comics.filter((val) => {
+                    if (searchTerm == '') {
+                        return val
+                    } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+                        return val
+                    }
+                }).map(item => (
                     <li className="gridItem">
                             <div className="imgContainer">
                                 <img key="img" src={`${item.thumbnail.path}.${item.thumbnail.extension}`} alt=""/>

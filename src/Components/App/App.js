@@ -21,9 +21,9 @@ function App() {
               </div>
               <Route exact path='/' render={() =>
               (<Redirect to="/profile"/>)} />
-                <PrivateRoute exact path="/profile" component={Profile} />
-                <PrivateRoute exact path="/comics" component={Comics} />
-                <PrivateRoute exact path="/characters" component={Characters} />
+              <PrivateRoute exact path="/profile" component={Profile} />
+              <PrivateRoute exact path="/comics" component={Comics} />
+              <PrivateRoute exact path="/characters" component={Characters} />
           </div>
         </Switch>
       </AuthProvider>
