@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../Navbar/Navbar';
+import Navbar from '../../Components/Navbar/Navbar';
 import { useAuth } from '../../Contexts/AuthContext';
 import './Profile.css';
 

@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import SignUp from '../SignUp/SignUp.jsx'
+import SignUp from '../../Pages/SignUp/SignUp'
 import { AuthProvider } from '../../Contexts/AuthContext';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
-import Profile from '../Profile/Profile';
-import Login from '../Login/Login';
+import Profile from '../../Pages/Profile/Profile';
+import Login from '../../Pages/Login/Login';
 import PrivateRoute from '../PrivateRoute';
-import Comics from '../Comics/Comics';
-import Characters from '../Characters';
+import Comics from '../../Pages/Comics/Comics';
+import Characters from '../../Pages/Characters';
 
 function App() {
   return (
