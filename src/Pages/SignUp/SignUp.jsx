@@ -1,35 +1,22 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import './SignUp.css';
-import { FaEnvelope, FaLock } from 'react-icons/fa';
-import { useAuth } from '../../Contexts/AuthContext';
-import { Link, useHistory } from 'react-router-dom';
+import { FaUser, FaLock } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import Axios from 'axios';
 
 export default function LoginScreen() {
-    const emailRef = useRef()
-    const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
-    const [error, setError] = useState("")
-    const [loading, setLoading] = useState(false)
-    const history = useHistory()
+    const [usernameReg, setUsernameReg] = useState("")
+    const [passwordReg, setPasswordReg] = useState(false)
 
-    async function handleSubmit(e) {
-        e.preventDefault()
+    const register = () => {
+        Axios.post('http://localhost:3001/register', {
+        username: usernameReg, 
+        password: passwordReg
+        }).then((response) => {
+            console.log(response)
+        })
+    };
 
-        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-            return setError('As senhas não coincidem.')
-        };
-
-        try {
-            setError("")
-            setLoading(true)
-            await signup(emailRef.current.value, passwordRef.current.value)
-            history.push("/profile")
-        } catch {
-            setError('Não foi possível criar conta.')
-        }
-        setLoading(false)
-    }
 
     return(
         <div className="loginBox">
@@ -43,22 +30,18 @@ export default function LoginScreen() {
             <div className="signUp">
                     <div className="signUpContent">
                         <h2>Criar conta</h2>
-                        <p className="error">{error}</p>
+                        <p className="error">{"a"}</p>
                         <p>Preencha os campos abaixo:</p>
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form className="form" onSubmit={register}>
                             <label className="label-input" htmlFor="">
-                                <FaEnvelope className="iconModify" /> 
-                                <input type="email" placeholder="E-mail" ref={emailRef} />
+                                <FaUser className="iconModify" /> 
+                                <input type="text" placeholder="Username" onChange={(e) => {setUsernameReg(e.target.value)}} />
                             </label>
                             <label className="label-input" htmlFor="">
                                 <FaLock className="iconModify" />
-                                <input type="password" placeholder="Senha" ref={passwordRef} />
+                                <input type="password" placeholder="Senha" onChange={(e) => {setPasswordReg(e.target.value)}} />
                             </label>
-                            <label className="label-input" htmlFor="">
-                                <FaLock className="iconModify" />
-                                <input type="password" placeholder="Confirme sua senha" ref={passwordConfirmRef} />
-                            </label>
-                            <button disabled={loading} className="btn">Registrar-se</button>
+                            <button className="btn">Registrar-se</button>
                         </form>
                     </div>
             </div>

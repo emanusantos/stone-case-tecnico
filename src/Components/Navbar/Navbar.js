@@ -1,22 +1,8 @@
 import React, { useState } from 'react'
 import './Navbar.css';
-import { Link, useHistory } from 'react-router-dom';
-import { useAuth } from '../../Contexts/AuthContext';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-    const [error, setError] = useState("")
-    const { logout } = useAuth();
-    const history = useHistory()
-
-    async function handleLogout() {
-        setError("")
-        try {
-            await logout()
-            history.push("/login")
-        } catch {
-            setError("Não foi possível deslogar")
-        }
-    }
 
     return (
         <nav>
@@ -29,7 +15,7 @@ export default function Navbar() {
                     <li class="drop">Meu perfil</li>
                     <div className="dropContent">
                         <Link to="/profile">Ver perfil</Link>
-                        <Link onClick={handleLogout}>Deslogar</Link>
+                        <Link>Deslogar</Link>
                     </div>
                 </div>
             </ul>

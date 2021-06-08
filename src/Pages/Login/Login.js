@@ -1,30 +1,14 @@
 import React, { useRef, useState } from 'react';
 import '.././SignUp/SignUp.css';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
-import { useAuth } from '../../Contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
 
 export default function LoginScreen() {
     const emailRef = useRef()
     const passwordRef = useRef()
-    const { login } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
-
-    async function handleSubmit(e) {
-        e.preventDefault()
-
-        try {
-            setError("")
-            setLoading(true)
-            await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/profile")
-        } catch {
-            setError('Não foi possível entrar.')
-        }
-        setLoading(false)
-    }
 
     return(
         <div className="loginBox">
@@ -43,7 +27,7 @@ export default function LoginScreen() {
                         <h2>Entrar</h2>
                         <p className="error">{error}</p>
                         <p>Preencha os campos abaixo:</p>
-                        <form className="form" onSubmit={handleSubmit}>
+                        <form className="form" onSubmit={console.log("a")}>
                             <label className="label-input" htmlFor="">
                                 <FaEnvelope className="iconModify" /> 
                                 <input type="email" placeholder="E-mail" ref={emailRef} />
